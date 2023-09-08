@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="businessServiceImpl" class= "pack.controller.BusinessServiceImpl" >
+	<!-- 위에 작성된 빈은 아규먼트? 파라미터?가 없는 생성자를 부르는 거래...  -->
+		<constructor-arg>
+			<!--  
+			<ref bean="dataDaoImpl"/>
+			-->
+			<ref bean="sbs" />
+			<!-- 이름으로 호출도 가능함, 아이디와 다르게 이름은 복수로 줄 수도 있음 -->
+		</constructor-arg>
+	
+	</bean>
+	<bean id = "dataDaoImpl" name="kbs,mbc,sbs" class="pack.model.DataDaoImpl"></bean>
+	
+</beans>
